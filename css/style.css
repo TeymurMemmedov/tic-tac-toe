@@ -1,0 +1,89 @@
+:root {
+  --board-width-height:300px;
+}
+
+.semi-bright {
+  filter: brightness(50%);
+}
+
+.normal-bright {
+  filter: brightness(100%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+}
+
+.game {
+  width: var(--board-width-height);
+}
+
+.row {
+  width: var(--board-width-height);
+  height: calc(var(--board-width-height/3));
+  display: flex;
+}
+
+.board {
+  width: inherit;
+  height: var(--board-width-height);
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(var(--board-width-height) / 3);
+  height: calc(var(--board-width-height) / 3);
+  cursor: pointer;
+}
+.cell i {
+  font-size: 4em;
+  color: white;
+}
+
+.row:nth-child(1), .row:nth-child(2) {
+  border-bottom: 2px solid white;
+}
+
+.row .cell:not(.cell:last-child) {
+  border-right: 2px solid white;
+}
+
+.scores {
+  width: var(--board-width-height);
+  height: calc(var(--board-width-height) / 3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+.scores div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: calc(var(--board-width-height) / 3);
+  height: inherit;
+}
+.scores span {
+  padding: 5px 0px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+.scores span:first-child {
+  font-size: 15px;
+}
+.scores span:nth-child(2) {
+  font-size: 25px;
+}/*# sourceMappingURL=style.css.map */

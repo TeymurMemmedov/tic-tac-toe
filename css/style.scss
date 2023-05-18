@@ -1,0 +1,93 @@
+:root{
+    --board-width-height:300px;
+}
+
+//Utility classes
+.semi-bright{
+    filter: brightness(50%);
+}
+
+.normal-bright{
+    filter: brightness(100%);
+}
+
+// Functions
+@mixin flex-center(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Main CSS
+body{
+    @include flex-center();
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+}
+
+.game{
+    width: var(--board-width-height);
+}
+.row{
+    width: var(--board-width-height);
+    height: calc(var(--board-width-height/3));
+    display: flex;
+}
+
+.board{
+    width: inherit;
+    height: var(--board-width-height);
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cell{
+    @include flex-center();
+    width: calc(var(--board-width-height)/3);
+    height:calc(var(--board-width-height)/3) ;
+    i{
+        font-size: 4em;
+        color: white;  
+    }
+    cursor: pointer;
+}
+
+.row:nth-child(1) , .row:nth-child(2){
+    border-bottom: 2px solid white;
+}
+
+.row .cell:not(.cell:last-child){
+    border-right: 2px solid white;
+}
+
+.scores{
+    width: var(--board-width-height);
+    height: calc(var(--board-width-height)/3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+    div{
+        @include flex-center();
+        flex-direction: column;
+        width: calc(var(--board-width-height)/3);
+        height: inherit;
+    }
+    span{
+        padding: 5px 0px;
+        font-family: "Raleway",sans-serif ;
+        font-weight: 400;
+        color: white;
+    }
+    span:first-child{
+        font-size: 15px;
+    }
+    span:nth-child(2){   
+        font-size: 25px;      
+    }
+}
+
+
+
